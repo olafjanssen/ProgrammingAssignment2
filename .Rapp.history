@@ -1,0 +1,232 @@
+system("defaults write org.R-project.R force.LANG en_US.UTF-8")
+library(AppliedPredictiveModeling)#
+library(caret)#
+data(AlzheimerDisease)
+adData = data.frame(diagnosis,predictors)#
+trainIndex = createDataPartition(diagnosis, p = 0.50,list=FALSE)#
+training = adData[trainIndex,]#
+testing = adData[-trainIndex,]
+training
+summary(training)
+head(training)
+length(training)
+length(testing)
+adData = data.frame(predictors)#
+trainIndex = createDataPartition(diagnosis,p=0.5,list=FALSE)#
+training = adData[trainIndex,]#
+testing = adData[-trainIndex,]
+length(testing)
+length(training)
+training
+addata
+adData
+length(adData)
+library(AppliedPredictiveModeling)#
+data(concrete)#
+library(caret)#
+set.seed(975)#
+inTrain = createDataPartition(mixtures$CompressiveStrength, p = 3/4)[[1]]#
+training = mixtures[ inTrain,]#
+testing = mixtures[-inTrain,]
+summary(training)
+qplot(training$CompressiveStrength)
+qplot(1:length(training),training$CompressiveStrength)
+length(training)
+length(training$CompressiveStrength)
+qplot(1:length(training$CompressiveStrength),training$CompressiveStrength)
+?cut2
+??cut2
+qplot(1:length(CompressiveStrength),CompressiveStrength, data = training)
+summary(training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=Water, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=Cement, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=BlastFurnaceSlag, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=FlyAsh, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=CoarseAggregate, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=FineAggregate, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=Age, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=CompressiveStrength, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=FlyAsh, data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=Age, data = training)
+??cut2
+cut2(training$Age, 4)
+cut2
+library(AppliedPredictiveModeling)#
+library(caret)
+library(Hmisc)
+cut2(training$Age, 4)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=cut2(training$Age, 4), data = training)
+?cut2
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=cut2(training$Age, g=4), data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=cut2(training$FlyAsh, g=4), data = training)
+qplot(1:length(CompressiveStrength),CompressiveStrength, colour=cut2(training$CompressiveStrength, g=4), data = training)
+library(AppliedPredictiveModeling)#
+data(concrete)#
+library(caret)#
+set.seed(975)#
+inTrain = createDataPartition(mixtures$CompressiveStrength, p = 3/4)[[1]]#
+training = mixtures[ inTrain,]#
+testing = mixtures[-inTrain,]
+qplot(SuperPlasticizer, data=training)
+training$Superplasticizer
+qplot(training$Superplasticizer)
+qplot(log10(training$Superplasticizer))
+log10(training$Superplasticizer)
+training$Superplasticizer
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]
+preProc <- preProcess(training, method="pca", pcaComp=2)
+summary(training)
+training$IL
+training[1]
+training[2]
+training[5]
+head(training[5])
+head(training[7])
+head(training[10])
+head(training[15])
+head(training[20])
+head(training[30])
+head(training[35])
+head(training[50])
+head(training[60])
+head(training[55])
+head(training[56])
+head(training[57])
+head(training[58])
+head(training[58:59])
+head(training[58:65])
+head(training[58:76])
+head(training[58:70])
+head(training[58:68])
+head(training[58:69])
+head(training[58:70])
+head(training[58:69])
+head(p)
+pre
+preProc <- preProcess(training[58:69], method="pca", pcaComp=2)
+summary(preProc)
+preProc
+preProc <- preProcess(training[58:69], method="pca")
+preProc
+preProc <- preProcess(training[58:69], method="pca", thresh=0.9)
+preProc
+set.seed(3433)#
+library(AppliedPredictiveModeling)#
+data(AlzheimerDisease)#
+adData = data.frame(diagnosis,predictors)#
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]#
+training = adData[ inTrain,]#
+testing = adData[-inTrain,]
+preProc <- preProcess(training[58:69], method="pca", thresh=0.8)
+pred1 <- predict(traingin[58:69], method="glm")
+pred1 <- predict(training[58:69], method="glm")
+tr <- train( training[58:69] , method="glm")
+?train
+tr <- train( training[58:69], diagnosis , method="glm")
+tr <- train( training[58:69], training$diagnosis , method="glm")
+tr
+preProc <- preProcess(training[58:69], method="pca", thresh=0.8)
+tr2 <- train( training[58:69], training$diagnosis , preProcess, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess=preProcess, method="glm")
+tr2 <- train( preProcess, training$diagnosis, method="glm")
+warnings()
+tr2
+tr2 <- train( preProcess, training$diagnosis, method="glm")
+preProc <- preProcess(training[58:69], method="pca", thresh=0.8)
+tr2 <- train( preProc, training$diagnosis, method="glm")
+preProc
+tr2 <- train( preProc, training$diagnosis, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", method="glm")
+tr2
+tr2 <- train( training[58:69], training$diagnosis , preProcess=preProc, method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", thresh=0.8,method="glm")
+tr2 <- train( training[58:69], training$diagnosis , preProcess="pca", method="glm")
+tr2
+y <- matrix(rnorm(200*200),1:200,1:200)
+y <- matrix(rnorm(2000*2000),1:2000,1:2000)
+y
+dim(y)
+y(1,1)
+y
+y[,1]
+y[1]
+y <- matrix(rnorm(2000*2000),1:2000,1:2000)
+y
+dim(y)
+?matrix
+y <- matrix(rnorm(2000*2000))
+dim(y)
+y <- matrix(rnorm(2000*2000), 2000)
+dim(y)
+y
+## Put comments here that give an overall description of what your#
+## functions do#
+#
+## Write a short comment describing this function#
+#
+makeCacheMatrix <- function(x = matrix()) {#
+#
+		m <- NULL#
+	    set <- function(y) {#
+	            x <<- y#
+	            m <<- NULL#
+	    }#
+	    get <- function() x#
+	    setInverse <- function(inverse) m <<- inverse#
+	    getInverse <- function() m#
+	    list(set = set, get = get,#
+	         setInverse = setInverse,#
+	         getInverse = getInverse)#
+#
+}#
+## Write a short comment describing this function#
+#
+cacheSolve <- function(x, ...) {#
+	    ## Return a matrix that is the inverse of 'x'#
+	    m <- x$getInverse()#
+	    if(!is.null(m)) {#
+	            message("getting cached data")#
+	            return(m)#
+	    }#
+	    data <- x$get()#
+	    m <- solve(data, ...)#
+	    x$setInverse(m)#
+	    m#
+}
+cacheSole(y)
+cacheSolve(y)
+makeCacheMatrix(y)
+m
+clear
+clean
+source('cacheMatrix.R')
+source('ProgrammingAssignment2/cacheMatrix.R')
+source('cacheMatrix.R')
+makeCacheMatrix(y)
+y
+makeCacheMatrix(y)
+cacheSolve(makeCacheMatrix(y))
+res <- cacheSolve(makeCacheMatrix(y))
+res
+dim(res)
+q <- makeCacheMatrix(y)
+q$getInverse()
+ddd <- q$get()
+dim(ddd)
+m <- solve(ddd)
+q$setInverse(ddd)
+q$getInverse()
+lll <- q$getInverse()
+is.null(lll)
+test <- makeCacheMatrix(d)
+test <- makeCacheMatrix(y)
+sss <- cacheSolve(test)
+ttt <- cacheSolve(test)
+sss
+ttt
